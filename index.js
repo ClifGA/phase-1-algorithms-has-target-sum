@@ -1,5 +1,12 @@
-function hasTargetSum(array, target) {
-  // Write your algorithm here
+const hasTargetSum = (array,target) => {
+  const storedNums = new Set();
+
+  for (let nums of array){
+    let complement = target - nums
+    if (complement in storedNums) return true
+    storedNums[nums] = true
+  }
+  return false;
 }
 
 /* 
